@@ -39,30 +39,25 @@ public class Lesson3Class {
         }
     }
 
-    public static int twoNumber() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("a:");
-        int a = scanner.nextInt();
-        System.out.println("b:");
-        int b = scanner.nextInt();
+    public static boolean twoNumber(int a, int b) {
         boolean c = (a + b > 10 && a + b <= 20);
         System.out.println(c);
 
-        return a;
+        return c;
     }
 
     public static void sixTask(int a) {
         if (a < 0)
             System.out.println("Число отрицательное");
-        if (a >= 0)
+        else
             System.out.println("Число положительное");
     }
 
-    public static int falsTask(int a) {
+    public static boolean falsTask(int a) {
         boolean c = a < 0;
         System.out.println(c);
 
-        return a;
+        return c;
     }
 
     public static void povtorTask(String a, int b) {
@@ -70,13 +65,12 @@ public class Lesson3Class {
         System.out.println(strRepeat);
     }
 
-    public static int visokGod(int year) {
+    public static boolean visokGod(int year) {
         boolean c = ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0));
         {
             System.out.println(c);
-
         }
-        return year;
+        return c;
     }
 
 
@@ -85,78 +79,60 @@ public class Lesson3Class {
         for (int i = 0; i < len; i++) {
             array[i] = intialValue;
         }
+        System.out.println(array);
         return array;
     }
 
-    public static void createArray2() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("len:");
-        int len = scanner.nextInt();
-        System.out.print("intialValue:");
-        int initialValue = scanner.nextInt();
-        int[] result = createArray(len, initialValue);
-        System.out.println("Результат:");
-        for (int value : result) {
-            System.out.print(value + "");
-        }
-        scanner.close();
-    }
 
     public static void main(String[] args) {
-        Lesson3Class lesson3Class = new Lesson3Class();
-        lesson3Class.printThreeWords();
+
+        printThreeWords();
+        checkSumSign(2, -3);
+        printColor(150);
+        compareNumbers(5, 7);
+        twoNumber(5, 9);
+        sixTask(5);
+        falsTask(7);
+        povtorTask("Слово", 5);
+        visokGod(2000);
 
 
-        lesson3Class.checkSumSign(2, -3);
+        int a[] = {0, 1, 1, 0, 0, 1, 0};
+        for (int i = 0; i < a.length; i++)
+            if (a[i] == 0)
+                a[i] = 1;
+            else
+                a[i] = 0;
+        System.out.println(Arrays.toString(a));
 
-        lesson3Class.printColor(150);
 
-        lesson3Class.compareNumbers(5, 7);
-
-        lesson3Class.twoNumber();
-        lesson3Class.sixTask(5);
-        lesson3Class.falsTask(7);
-        lesson3Class.povtorTask("Слово", 5);
-        lesson3Class.visokGod(2000);
-
-        {
-            int a[] = {0, 1, 1, 0, 0, 1, 0};
-            for (int i = 0; i < a.length; i++)
-                if (a[i] == 0)
-                    a[i] = 1;
-                else
-                    a[i] = 0;
-            System.out.println(Arrays.toString(a));
+        int[] array = new int[100];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = i + 1;
         }
+        System.out.println(Arrays.toString(array));
 
-        {
-            int[] array = new int[100];
-            for (int i = 0; i < array.length; i++) {
-                array[i] = i + 1;
-            }
-            System.out.println(Arrays.toString(array));
-        }
-        {
-            int[] array = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
-            for (int i = 0; i < array.length; i++) {
-                if (array[i] < 6) {
-                    array[i] *= 2;
-                }
-            }
-            System.out.println(Arrays.toString(array));
-        }
-        {
-            int size = 5;
-            int[][] array = new int[size][size];
-            for (int i = 0; i < size; i++) {
-                array[i][i] = 1;
-                array[i][size - i - 1] = 1;
-            }
-            for (int i = 0; i < size; i++) {
-                System.out.println(Arrays.toString(array[i]));
+
+        int[] ar = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+        for (int i = 0; i < ar.length; i++) {
+            if (ar[i] < 6) {
+                ar[i] *= 2;
             }
         }
+        System.out.println(Arrays.toString(ar));
 
-        lesson3Class.createArray2();
+
+        int size = 5;
+        int[][] array2 = new int[size][size];
+        for (int i = 0; i < size; i++) {
+            array2[i][i] = 1;
+            array2[i][size - i - 1] = 1;
+        }
+        for (int i = 0; i < size; i++) {
+            System.out.println(Arrays.toString(array2[i]));
+        }
+
+        createArray(8, 9);
+
     }
 }
