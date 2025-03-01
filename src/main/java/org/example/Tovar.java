@@ -1,6 +1,6 @@
 package org.example;
 
-public class Товар {
+public class Tovar {
     private String название;
     private String датаПроизводства;
     private String производитель;
@@ -8,7 +8,7 @@ public class Товар {
     private int цена;
     private boolean состояниеБронированияПокупателем;
 
-    public Товар(String название, String датаПроизводства, String производитель, String странаПроисхождения, int цена, boolean состояниеБронированияПокупателем) {
+    public Tovar(String название, String датаПроизводства, String производитель, String странаПроисхождения, int цена, boolean состояниеБронированияПокупателем) {
         this.название = название;
         this.датаПроизводства = датаПроизводства;
         this.производитель = производитель;
