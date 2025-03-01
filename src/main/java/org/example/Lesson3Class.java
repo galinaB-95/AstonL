@@ -79,7 +79,7 @@ public class Lesson3Class {
         for (int i = 0; i < len; i++) {
             array[i] = intialValue;
         }
-        System.out.println(array);
+        System.out.println(Arrays.toString(array));
         return array;
     }
 
