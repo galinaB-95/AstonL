@@ -1,23 +1,41 @@
 package org.example;
 
-public class Rectangle implements Ps{
+public class Rectangle implements Ps {
+    private double width;
+    private double height;
+    private String bgColor;
+    private String borderColor;
+
+    public Rectangle(double width, double height, String bgColor, String borderColor) {
+        this.width = width;
+        this.height = height;
+        this.bgColor = bgColor;
+        this.borderColor = borderColor;
+    }
 
     @Override
     public double getPerimeter() {
-        return 0;
+        double c = 2 * (width + height);
+        System.out.println(" Периметр прямоугольника " + c);
+        return c;
     }
 
     @Override
     public double getArea() {
-        return 0;
+        double с = width * height;
+        System.out.println("Площадь прямоугольника " + с);
+        return с;
     }
 
     @Override
     public String getBgColor() {
-        return "";
+        System.out.println("Цвет границ " + bgColor);
+        return bgColor;
     }
 
     @Override
     public String getBorderColor() {
-        return "";
-    }}
+        System.out.println("Цвет фона " + borderColor);
+        return borderColor;
+    }
+}
