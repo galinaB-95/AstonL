@@ -15,7 +15,7 @@ public class Circle implements Ps {
     @Override
     public double getPerimeter() {
         double с = 2 * Math.PI * radius;
-        System.out.println("Периметр круга" + с);
+        System.out.println("Периметр круга " + с);
         return с;
     }
 

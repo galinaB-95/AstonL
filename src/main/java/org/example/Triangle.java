@@ -18,7 +18,7 @@ public class Triangle implements Ps {
     @Override
     public double getPerimeter() {
         double c = sideA + sideB + sideC;
-        System.out.println("Периметр трегольника" + c);
+        System.out.println("Периметр трегольника " + c);
         return c;
     }
 
@@ -26,7 +26,7 @@ public class Triangle implements Ps {
     public double getArea() {
         double p = getPerimeter() / 2;
         double c = Math.sqrt(p * (p - sideA) * (p - sideB) * (p - sideC));
-        System.out.println("Площадь трегольника" + c);
+        System.out.println("Площадь трегольника " + c);
         return c;
     }
 

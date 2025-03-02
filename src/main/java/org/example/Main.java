@@ -19,5 +19,7 @@ public class Main {
         implementedByRectangle.getArea();
         implementedByRectangle.getBgColor();
         implementedByRectangle.getBorderColor();
+
+
     }
 }
