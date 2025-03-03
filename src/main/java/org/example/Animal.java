@@ -1,12 +1,19 @@
 package org.example;
 
-public class Animal {
-    public void run(String name, int a) {
-        System.out.println(name + " пробежал " + a + "м");
+abstract class Animal {
+    protected String name;
+    protected static int animalCount = 0;
+    public Animal (String name) {
+        this.name = name;
+        animalCount++;
     }
-    public static void s(String name, int a){
-        System.out.println(name + " проплыл " + a + "м");
+    public abstract void run (int distance);
+    public abstract void swim (int distance);
 
-
+    public static int getAnimalCount() {
+        return animalCount;
+    }
+    public String getName(){
+        return name;
     }
 }
