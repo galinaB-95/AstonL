@@ -1,7 +1,6 @@
 package org.example;
 
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class Lesson3Class {
     public static void printThreeWords() {
@@ -41,8 +40,6 @@ public class Lesson3Class {
 
     public static boolean twoNumber(int a, int b) {
         boolean c = (a + b > 10 && a + b <= 20);
-        System.out.println(c);
-
         return c;
     }
 
@@ -55,8 +52,6 @@ public class Lesson3Class {
 
     public static boolean falsTask(int a) {
         boolean c = a < 0;
-        System.out.println(c);
-
         return c;
     }
 
@@ -67,9 +62,6 @@ public class Lesson3Class {
 
     public static boolean visokGod(int year) {
         boolean c = ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0));
-        {
-            System.out.println(c);
-        }
         return c;
     }
 
@@ -85,7 +77,6 @@ public class Lesson3Class {
 
 
     public static void main(String[] args) {
-
         printThreeWords();
         checkSumSign(2, -3);
         printColor(150);
@@ -133,6 +124,9 @@ public class Lesson3Class {
         }
 
         createArray(8, 9);
-
     }
 }
+
+
+
+
