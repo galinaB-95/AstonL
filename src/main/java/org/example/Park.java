@@ -1,12 +1,18 @@
 package org.example;
 
 public class Park {
-    Atraktion atraktion;
+  Attraktion atraktion;
 
-    public class Atraktion {
-        String название;
-        String времяРаботы;
-        int стоимость;
+public class Attraktion {
+        private  String nameAttraktion;
+        private String workingHours;
+        private int cost;
+
+        public  Attraktion(String nameAttraktion,String workingHours, int cost) {
+            this.nameAttraktion = nameAttraktion;
+            this.workingHours = workingHours;
+            this.cost = cost;
+        }
 
 
     }
