@@ -81,11 +81,11 @@ public class Lesson3Class {
         checkSumSign(2, -3);
         printColor(150);
         compareNumbers(5, 7);
-        twoNumber(5, 9);
+        System.out.println(twoNumber(5, 9));
         sixTask(5);
-        falsTask(7);
+        System.out.println(falsTask(7));
         povtorTask("Слово", 5);
-        visokGod(2000);
+        System.out.println(visokGod(2000));
 
 
         int a[] = {0, 1, 1, 0, 0, 1, 0};
@@ -122,7 +122,6 @@ public class Lesson3Class {
         for (int i = 0; i < size; i++) {
             System.out.println(Arrays.toString(array2[i]));
         }
-
         createArray(8, 9);
     }
 }
