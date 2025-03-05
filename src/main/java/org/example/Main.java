@@ -1,7 +1,6 @@
 package org.example;
 
 
-
 public class Main {
     public static void main(String[] args) {
         Product[] productArray = new Product[5];
@@ -10,10 +9,11 @@ public class Main {
         productArray[2] = new Product("not 6", "25.04.2015", "Xiaomi", "China", 15000, true);
         productArray[3] = new Product("PSP", "12.12.2020", "Sony", "China", 78000, true);
         productArray[4] = new Product("Mi6", "15.05.2019", "Xiaomi", "China", 2500, true);
+        for (int i = 0; i < productArray.length; i++) {
+            productArray[i].printInfo();
 
+        }
 
-    Park park = new Park();
-
-    Product product = new Product("jghfc", "09.15/2013", "jytf", "hgjf",656,true);
-        System.out.println(product.printInfo());
-}}
+        Park.Attraktion attraktion = new Park().new Attraktion("sky", "10.00-20.00", 350);
+    }
+}

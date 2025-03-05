@@ -17,13 +17,11 @@ public class Product {
         this.statusBooking = statusBooking;
     }
 
-
-        public boolean printInfo(){
-            System.out.println(this);
-            return false;
-        }
-
+    public void printInfo() {
+        System.out.println("Название " + name + " дата производства " + productionDate + " производитель " + manufacturer + " страна происхождения " + originCountry + " цена " + price + " состояние бронирования попателем " + statusBooking);
     }
+
+}
 
 
 
