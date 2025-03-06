@@ -11,9 +11,10 @@ public class Main {
         productArray[4] = new Product("Mi6", "15.05.2019", "Xiaomi", "China", 2500, true);
         for (int i = 0; i < productArray.length; i++) {
             productArray[i].printInfo();
-
         }
 
         Park.Attraktion attraktion = new Park().new Attraktion("sky", "10.00-20.00", 350);
+        System.out.println(attraktion.getNameAttraktion());
+
     }
 }
