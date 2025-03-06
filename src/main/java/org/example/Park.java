@@ -14,7 +14,18 @@ public class Park {
             this.cost = cost;
         }
 
+        public String getNameAttraktion() {
+            return nameAttraktion;
+        }
 
+        public String getWorkingHours() {
+            return workingHours;
+        }
+
+        public int getCost() {
+            return cost;
+        }
     }
+
 }
 
