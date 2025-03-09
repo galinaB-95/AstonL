@@ -1,7 +1,7 @@
 package org.example;
 
 public class Array {
-    public void fourArray (String arr [] ){
+    public  int fourArray (String arr [] ){
         int a = 1;
         int [][] b = new  int[4][4];
         for (int i=0; i<4; i++){
@@ -11,5 +11,6 @@ public class Array {
                 a++;
             }
         }
+        return a;
     }
 }
