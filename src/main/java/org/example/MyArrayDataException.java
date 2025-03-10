@@ -1,6 +1,6 @@
 package org.example;
 
-public class MyArrayDataException extends Exception{
+public class MyArrayDataException extends Exception {
     public int i;
     public int j;
 

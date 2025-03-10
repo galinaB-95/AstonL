@@ -1,11 +1,15 @@
 package org.example;
 
-
 import java.util.Arrays;
+
+import static java.util.Arrays.*;
 
 public class Main {
     public static void main(String[] args) {
-        String[][] arr = new String[][]{{"1", "1", "5", "2"}, {"1", "2", "3", "4"}, {"1", "hi", "2", "1"}, {"1", "1", "3", "1"}};
+        String[][] arr = new String[][]{{"7", "8", "5", "2",},
+                {"1", "2", "3", "4"},
+                {"1", "8", "2", "1"},
+                {"1", "1", "3", "1"}};
         try {
             try {
                 int result = fourArray(arr);
