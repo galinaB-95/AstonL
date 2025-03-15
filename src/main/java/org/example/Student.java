@@ -39,6 +39,8 @@ public class Student {
         }
     }
 
-    public static void transferCourse(ArrayList<Student> students)
+    public static void transferCourse(ArrayList<Student> students){
+
+    }
 }
 
