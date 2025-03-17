@@ -2,6 +2,8 @@ package org.example;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Student {
     private String name;
@@ -32,6 +34,7 @@ public class Student {
         int i = 0;
         while (i < lengthOfStudents) {
             if (averageGrade(students.get(i).grades) < 3) {
+                lengthOfStudents--;
                 students.remove(i);
             } else i++;
         }
@@ -42,11 +45,11 @@ public class Student {
         int i = 0;
         while (i < lengthOfStudents) {
             if (averageGrade(students.get(i).grades) >= 3) {
-                lengthOfStudents--;
+
                 students.get(i).cours++;
             } else i++;
         }
-
     }
+
 }
 
