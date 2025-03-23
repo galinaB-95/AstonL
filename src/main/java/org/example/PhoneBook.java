@@ -13,18 +13,14 @@ public class PhoneBook {
     }
 
     void add(String family, String phoneNum) {
-        HashSet<String> numbers;
-
         if (map.containsKey(family)) {
-            numbers = map.get(family);
+           map.get(family).add(phoneNum);
         } else {
-            numbers = new HashSet<>();
+            map.put(family, new HashSet<>( Set.of(phoneNum)));
         }
-        numbers.add(phoneNum);
-        map.put(family, numbers);
     }
 
-    Set<String> get(String family) {
+    public Set<String>  get(String family) {
         return map.get(family);
     }
 

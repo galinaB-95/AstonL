@@ -45,9 +45,8 @@ public class Student {
         int i = 0;
         while (i < lengthOfStudents) {
             if (averageGrade(students.get(i).grades) >= 3) {
-
                 students.get(i).cours++;
-            } else i++;
+            } break;
         }
     }
 
