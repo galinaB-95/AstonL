@@ -13,9 +13,7 @@ public class Main {
         return result;
     }
 
-    public double area(double h, double a) {
-        return (h * a) / 2;
-    }
+
 
     public static int add(int a, int b) {
 
