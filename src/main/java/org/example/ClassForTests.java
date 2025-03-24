@@ -13,7 +13,7 @@ public class ClassForTests {
         return result;
     }
 
-    public double area(double h, double a) {
+    public static double area(double h, double a) {
         return (h * a) / 2;
     }
 
