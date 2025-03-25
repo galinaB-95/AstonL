@@ -1,4 +1,4 @@
-import org.example.AreaTriangle;
+import org.example.ClassTests;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -10,14 +10,15 @@ public class Tests {
     @Test
     @DisplayName("Факториал")
     public void getFactorial() {
-        System.out.println();
+        assertEquals(24, ClassTests.getFactorial(4));
+        ;
     }
 
     @Test
     @DisplayName("Площадь")
     public  void testArea(){
         Area area = new Area();
-        assertEquals(20, AreaTriangle.area(10,8) );
+        assertEquals(20, ClassTests.area(10,8) );
     }
 }
 
