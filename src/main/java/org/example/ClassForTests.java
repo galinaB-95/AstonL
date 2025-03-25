@@ -9,7 +9,7 @@ public class ClassForTests {
     public static int getFactorial(int a) {
         int result = 1;
         for (int i = 1; i <= a; i++) {
-            result = result * 1;
+            result = result * i;
         }
         return result;
     }
