@@ -1,15 +1,14 @@
 package org.example;
 
-import java.math.BigInteger;
-
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class ClassForTests {
 
-    public static BigInteger getFactorial(int f) {
-        BigInteger result = BigInteger.ONE;
-        for (int i = 1; i <= f; i++)
-            result = result.multiply(BigInteger.valueOf(i));
+    public static int getFactorial(int a) {
+        int result = 1;
+        for (int i = 1; i <= a; i++) {
+            result = result * i;
+        }
         return result;
     }
 
@@ -37,7 +36,7 @@ public class ClassForTests {
         return a / b;
     }
 
-    public static void comparing(int a, int b) {
+    public static byte[] comparing(int a, int b) {
         if (a > b) {
             System.out.println(a > b);
         } else if (a < b) {
@@ -45,6 +44,7 @@ public class ClassForTests {
         } else {
             System.out.println(a = b);
         }
+        return null;
     }
 }
 
