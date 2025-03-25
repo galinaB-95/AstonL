@@ -9,14 +9,14 @@ public class ClassTests {
     public static int getFactorial(int a) {
         int result = 1;
         for (int i = 1; i <= a; i++) {
-            result = result * 1;
+            result = result * i;
         }
         return result;
     }
-    
+
     public static double area(double h, double a) {
-            return (h * a) / 2;
-        }
+        return (h * a) / 2;
+    }
 
 
     public static int add(int a, int b) {
@@ -39,14 +39,8 @@ public class ClassTests {
         return a / b;
     }
 
-    public static void comparing(int a, int b) {
-        if (a > b) {
-            System.out.println(a > b);
-        } else if (a < b) {
-            System.out.println(a < b);
-        } else {
-            System.out.println(a = b);
-        }
+    public static int compare(int a, int b) {
+        return (a < b) ? -1 : ((a == b) ? 0 : 1);
     }
 }
 
