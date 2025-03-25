@@ -6,10 +6,11 @@ import java.math.BigInteger;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class ClassForTests {
 
-    public static BigInteger getFactorial(int f) {
-        BigInteger result = BigInteger.ONE;
-        for (int i = 1; i <= f; i++)
-            result = result.multiply(BigInteger.valueOf(i));
+    public static int getFactorial(int a) {
+        int result = 1;
+        for (int i = 1; i <= a; i++) {
+            result = result * 1;
+        }
         return result;
     }
 
