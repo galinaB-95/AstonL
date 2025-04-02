@@ -1,9 +1,11 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class Test1 {
     @Test
@@ -24,12 +26,18 @@ public class Test1 {
     }
 
         @Test
-        public void link(){
+        public void link() throws InterruptedException {
             WebDriver driver = new ChromeDriver();
             driver.get("https://www.mts.by/");
+            new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(By.id("cookie-agree"))).click();
             driver.manage().window().maximize();
-
             driver.findElement(By.xpath("//section/div/a")).click();
+
+
+          
+           }//*[@id="cookie-agree"]
+    // driver.findElement(By.id("cookie-agree")).click();
+
 
 
             //*[@id="pay-section"]/div/div/div[2]/section/div/a
@@ -40,6 +48,6 @@ public class Test1 {
         //*[@id="pay-section"]/div/div/div[2]/section/div/div[2]/ul
 
 
-    }
+
 
 
