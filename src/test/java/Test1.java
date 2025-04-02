@@ -13,51 +13,51 @@ public class Test1 {
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.mts.by/");
         Assertions.assertEquals(
-                driver.findElement(By.xpath("//*[@id=\"pay-section\"]/div/div/div[2]/section/div/h2")).getText(),"Онлайн пополнение\n" +
-                "без комиссии" );
+                driver.findElement(By.xpath("//*[@id=\"pay-section\"]/div/div/div[2]/section/div/h2")).getText(), "Онлайн пополнение\n" +
+                        "без комиссии");
         driver.findElement(By.xpath("//*[@id=\"pay-section\"]/div/div/div[2]/section/div/h2")).getText();
         driver.quit();
     }
+
     @Test
     public void logo() {
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.mts.by/");
 
-      driver.findElement(By.xpath("//ul[1]"));
+        driver.findElement(By.xpath("//ul[1]"));
     }
 
-        @Test
-        public void link() throws InterruptedException {
-            WebDriver driver = new ChromeDriver();
-            driver.get("https://www.mts.by/");
-            new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(By.id("cookie-agree"))).click();
-            driver.manage().window().maximize();
-            driver.findElement(By.xpath("//section/div/a")).click();
-            driver.quit();
+    @Test
+    public void link() throws InterruptedException {
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://www.mts.by/");
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(By.id("cookie-agree"))).click();
+        driver.manage().window().maximize();
+        driver.findElement(By.xpath("//section/div/a")).click();
+        driver.quit();
 
     }
-        @Test
-        public void keep(){
+
+    @Test
+    public void keep() {
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.mts.by/");
         //new WebDriverWait(driver, Duration.ofSeconds(10)).
-                //until(ExpectedConditions.elementToBeClickable(By.id("cookie-agree"))).click();
+        //until(ExpectedConditions.elementToBeClickable(By.id("cookie-agree"))).click();
         driver.manage().window().maximize();
         driver.findElement(By.xpath("//from[@id='pay-connection']/div[1]")).sendKeys("297777777");
     }
 
-          
-    }//*[@id="cookie-agree"]
-    // driver.findElement(By.id("cookie-agree")).click();
+
+}//*[@id="cookie-agree"]
+// driver.findElement(By.id("cookie-agree")).click();
 
 
-
-            //*[@id="pay-section"]/div/div/div[2]/section/div/a
-
+//*[@id="pay-section"]/div/div/div[2]/section/div/a
 
 
 //*[@id="pay-section"]/div/div/div[2]/section/div/div[2]/ul/li[1]/img
-        //*[@id="pay-section"]/div/div/div[2]/section/div/div[2]/ul
+//*[@id="pay-section"]/div/div/div[2]/section/div/div[2]/ul
 
 
 
