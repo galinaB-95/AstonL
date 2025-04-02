@@ -16,13 +16,21 @@ public class Test1 {
         driver.findElement(By.xpath("//*[@id=\"pay-section\"]/div/div/div[2]/section/div/h2")).getText();
     }
     @Test
-    public void logo(){
+    public void logo() {
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.mts.by/");
 
-        WebElement element = driver.findElement(By.xpath("//ul[1]"));
+      driver.findElement(By.xpath("//ul[1]"));
+    }
 
-        System.out.println(element.getText());
+        @Test
+        public void link(){
+            WebDriver driver = new ChromeDriver();
+            driver.get("https://www.mts.by/");
+            driver.findElement(By.xpath("//section/div/a")).click();
+
+            //*[@id="pay-section"]/div/div/div[2]/section/div/a
+        }
 
 
 //*[@id="pay-section"]/div/div/div[2]/section/div/div[2]/ul/li[1]/img
@@ -30,5 +38,5 @@ public class Test1 {
 
 
     }
-}
+
 
