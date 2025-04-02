@@ -27,7 +27,10 @@ public class Test1 {
         public void link(){
             WebDriver driver = new ChromeDriver();
             driver.get("https://www.mts.by/");
+            driver.manage().window().maximize();
+
             driver.findElement(By.xpath("//section/div/a")).click();
+
 
             //*[@id="pay-section"]/div/div/div[2]/section/div/a
         }
