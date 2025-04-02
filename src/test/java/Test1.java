@@ -16,6 +16,7 @@ public class Test1 {
                 driver.findElement(By.xpath("//*[@id=\"pay-section\"]/div/div/div[2]/section/div/h2")).getText(),"Онлайн пополнение\n" +
                 "без комиссии" );
         driver.findElement(By.xpath("//*[@id=\"pay-section\"]/div/div/div[2]/section/div/h2")).getText();
+        driver.quit();
     }
     @Test
     public void logo() {
@@ -32,16 +33,27 @@ public class Test1 {
             new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(By.id("cookie-agree"))).click();
             driver.manage().window().maximize();
             driver.findElement(By.xpath("//section/div/a")).click();
+            driver.quit();
 
+    }
+        @Test
+        public void keep(){
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://www.mts.by/");
+        //new WebDriverWait(driver, Duration.ofSeconds(10)).
+                //until(ExpectedConditions.elementToBeClickable(By.id("cookie-agree"))).click();
+        driver.manage().window().maximize();
+        driver.findElement(By.xpath("//from[@id='pay-connection']/div[1]")).sendKeys("297777777");
+    }
 
           
-           }//*[@id="cookie-agree"]
+    }//*[@id="cookie-agree"]
     // driver.findElement(By.id("cookie-agree")).click();
 
 
 
             //*[@id="pay-section"]/div/div/div[2]/section/div/a
-        }
+
 
 
 //*[@id="pay-section"]/div/div/div[2]/section/div/div[2]/ul/li[1]/img
