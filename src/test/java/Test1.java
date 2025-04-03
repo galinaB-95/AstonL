@@ -28,7 +28,7 @@ public class Test1 {
     }
 
     @Test
-    public void link() throws InterruptedException {
+    public void link()  {
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.mts.by/");
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(By.id("cookie-agree"))).click();
@@ -50,21 +50,9 @@ public class Test1 {
         driver.findElement(By.id("connection-sum")).sendKeys("200");
         driver.findElement(By.id("connection-email")).sendKeys("2334@fc.com");
         driver.findElement(By.xpath("//button[text()='Продолжить']")).click();
+        driver.quit();
     }
-//*[@id="connection-phone"]//*[@id="connection-email"]//*[@id="pay-connection"]/button
-
-    //*[@id="connection-sum"]
-
-}//*[@id="cookie-agree"]
-// driver.findElement(By.id("cookie-agree")).click();
-
-
-//*[@id="pay-section"]/div/div/div[2]/section/div/a
-
-
-//*[@id="pay-section"]/div/div/div[2]/section/div/div[2]/ul/li[1]/img
-//*[@id="pay-section"]/div/div/div[2]/section/div/div[2]/ul
-
+}
 
 
 
