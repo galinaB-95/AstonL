@@ -23,6 +23,12 @@ public CommunicationSerivices checkPhonenumber(String phonenumber) {
     Assertions.assertEquals("Номер телефона", getAttribute("placeholder"));
     return this;
 }
+public CommunicationSerivices  checkSumLocator(String sum){
+        driver.findElement(sumLocator).getAttribute("placeholder");
+    System.out.println(getAttribute("placeholder"));
+    Assertions.assertEquals("Сумма", getAttribute("placeholder"));
+    return this;
+}
 
 
 }

@@ -13,4 +13,14 @@ public class Mts12 {
         WebElement element = driver.findElement(By.id("connection-phone"));
         System.out.println(element.getAttribute("placeholder"));
         Assertions.assertEquals("Номер телефона", element.getAttribute("placeholder"));
-}}
+}
+    @Test
+    public void sum(){
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://www.mts.by/");
+        WebElement element = driver.findElement(By.id("connection-sum"));
+        System.out.println(element.getAttribute("placeholder"));
+        Assertions.assertEquals("Сумма", element.getAttribute("placeholder"));
+    }
+
+}
