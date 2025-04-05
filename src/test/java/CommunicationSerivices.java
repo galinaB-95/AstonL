@@ -29,6 +29,11 @@ public CommunicationSerivices  checkSumLocator(String sum){
     Assertions.assertEquals("Сумма", getAttribute("placeholder"));
     return this;
 }
-
+public CommunicationSerivices checkEmailLocator(String email){
+    driver.findElement(emailLocator).getAttribute("placeholder");
+    System.out.println(getAttribute("placeholder"));
+    Assertions.assertEquals("E-mail для отправки чека", getAttribute("placeholder"));
+    return this;
+}
 
 }
