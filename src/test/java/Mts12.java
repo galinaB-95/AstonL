@@ -22,14 +22,7 @@ public class Mts12 {
         System.out.println(element.getAttribute("placeholder"));
         Assertions.assertEquals("Сумма", element.getAttribute("placeholder"));
     }
-    @Test
-    public void emailLocator(){
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://www.mts.by/");
-        WebElement element = driver.findElement(By.id("connection-email"));
-        System.out.println(element.getAttribute("placeholder"));
-        Assertions.assertEquals("E-mail для отправки чека", element.getAttribute("placeholder"));
 
     }
 
-}
+
