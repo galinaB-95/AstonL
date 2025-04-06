@@ -35,8 +35,5 @@ public CommunicationSerivices checkEmailLocator(String email){
     Assertions.assertEquals("E-mail для отправки чека", getAttribute("placeholder"));
     return this;
 }
-@Test
-    public void srivices(){
 
-}
 }
