@@ -53,7 +53,7 @@ public class Test1 {
 
     @Test
     public void link() {
-        driver.findElement(By.xpath("//section/div/a")).click();
+        driver.findElement(By.xpath("//*[text()='Подробнее о сервисе']")).click();
     }
 
     @Test
