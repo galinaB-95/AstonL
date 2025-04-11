@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,56 +15,54 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class Test1 {
+    private WebDriver driver;
+    private Cookie cookie;
 
+    @BeforeEach
+    public void start() {
+        driver = new ChromeDriver();
+        driver.get("https://www.mts.by/");
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(By.id("cookie-agree"))).click();
+        driver.manage().window().maximize();
+    }
+
+    @AfterEach
+    public void end() {
+        driver.quit();
+    }
 
     @Test
     public void init() {
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://www.mts.by/");
-        Assertions.assertEquals(
-                driver.findElement(By.xpath("//*[@id=\"pay-section\"]/div/div/div[2]/section/div/h2")).getText(), "Онлайн пополнение\n" +
-                        "без комиссии");
-        driver.findElement(By.xpath("//*[@id=\"pay-section\"]/div/div/div[2]/section/div/h2")).getText();
-        driver.quit();
+        WebElement block = driver.findElement(By.xpath("//*[@class='pay']//h2"));
+        Assertions.assertEquals(block.getText(), "Онлайн пополнение\n" +
+                "без комиссии");
     }
 
     @Test
     public void logo() {
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://www.mts.by/");
+        WebElement visa = driver.findElement(By.cssSelector("img[src*=visa]"));
+        WebElement visaVerified = driver.findElement(By.cssSelector("img[src*=visa-verified]"));
+        WebElement mastercard = driver.findElement(By.cssSelector("img[src*=mastercard]"));
+        WebElement mastercardSecure = driver.findElement(By.cssSelector("img[src*=mastercard-secure]"));
+        WebElement belkart = driver.findElement(By.cssSelector("img[src*=belkart]"));
+        System.out.println(" Логотип visa найден " + visa.isDisplayed() + " \n Логотип visa-verified найден " + visaVerified.isDisplayed()
+                + " \n Логотип mastercard найден " + mastercard.isDisplayed() + " \n Логотип mastercard-secure найден " + mastercardSecure.isDisplayed()
+                + "\n Логотип belkart найден " + belkart.isDisplayed());
 
-        driver.findElement(By.cssSelector("img[src*=visa]"));
-        driver.findElement(By.cssSelector("img[src*=visa-verified]"));
-        driver.findElement(By.cssSelector("img[src*=mastercard]"));
-        driver.findElement(By.cssSelector("img[src*=mastercard-secure]"));
-        driver.findElement(By.cssSelector("img[src*=belkart]"));
-        System.out.println("Логотипы найдены");
-        driver.quit();
     }
 
     @Test
     public void link() {
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://www.mts.by/");
-        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(By.id("cookie-agree"))).click();
-        driver.manage().window().maximize();
         driver.findElement(By.xpath("//section/div/a")).click();
-        driver.quit();
-
     }
 
     @Test
     public void keep() {
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://www.mts.by/");
-        new WebDriverWait(driver, Duration.ofSeconds(20)).
-                until(ExpectedConditions.elementToBeClickable(By.id("cookie-agree"))).click();
-        driver.manage().window().maximize();
         driver.findElement(By.id("connection-phone")).sendKeys("297777777");
         driver.findElement(By.id("connection-sum")).sendKeys("200");
         driver.findElement(By.id("connection-email")).sendKeys("2334@fc.com");
         driver.findElement(By.xpath("//button[text()='Продолжить']")).click();
-        driver.quit();
+
     }
 
 }
