@@ -11,8 +11,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class Test1 {
     private WebDriver driver;
@@ -54,6 +53,12 @@ public class Test1 {
     @Test
     public void link() {
         driver.findElement(By.xpath("//*[text()='Подробнее о сервисе']")).click();
+        String expectUrl = "https://www.mts.by/help/poryadok-oplaty-i-bezopasnost-internet-platezhey/";
+        String actualUrl = driver.getCurrentUrl();
+        assertEquals(expectUrl, actualUrl);
+        WebElement content = driver.findElement(By.xpath("//*[contains(text(), 'Оплата банковской картой')]"));
+        System.out.println (content.isDisplayed());
+
     }
 
     @Test
@@ -62,12 +67,11 @@ public class Test1 {
         driver.findElement(By.id("connection-sum")).sendKeys("200");
         driver.findElement(By.id("connection-email")).sendKeys("2334@fc.com");
         driver.findElement(By.xpath("//button[text()='Продолжить']")).click();
-
-    }
-
-}
+        WebElement page = driver.findElement(By.xpath("//*[contains(text(), 'Оплата: Услуги связи]"));
+        System.out.println (page.isDisplayed());
 
 
+}}
 
 
 
