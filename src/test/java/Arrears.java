@@ -1,35 +1,38 @@
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 import static javax.swing.text.html.CSS.getAttribute;
 
 public class Arrears {
-    By accountnumberLocator = By.id("score-arrears");
-    By sumLocator = By.id("instalment-sum");
-    By emailLocator = By.id("instalment-email");
     private final WebDriver driver;
-    public Arrears(WebDriver driver){
+
+    public Arrears(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver;
     }
-    public Arrears checkAccountnumber(String accountnumber) {
-        driver.findElement(accountnumberLocator).getAttribute("placeholder");
-        System.out.println(getAttribute("placeholder"));
-        Assertions.assertEquals("Номер счета на 2073", getAttribute("placeholder"));
+
+    public Arrears checkAccountnumber() {
+
+        WebElement element = driver.findElement(By.id("score-arrears"));
+        System.out.println(element.getAttribute("placeholder"));
+        Assertions.assertEquals("Номер счета на 2073", element.getAttribute("placeholder"));
         return this;
     }
-    public Arrears checkSumLocator(String sum){
-        driver.findElement(sumLocator).getAttribute("placeholder");
-        System.out.println(getAttribute("placeholder"));
-        Assertions.assertEquals("Сумма", getAttribute("placeholder"));
+
+    public Arrears checkSumLocator() {
+        WebElement element = driver.findElement(By.id("instalment-sum"));
+        System.out.println(element.getAttribute("placeholder"));
+        Assertions.assertEquals("Сумма", element.getAttribute("placeholder"));
         return this;
     }
-    public Arrears checkEmailLocator(String email){
-        driver.findElement(emailLocator).getAttribute("placeholder");
-        System.out.println(getAttribute("placeholder"));
-        Assertions.assertEquals("E-mail для отправки чека", getAttribute("placeholder"));
+
+    public Arrears checkEmailLocator() {
+        WebElement element = driver.findElement(By.id("instalment-email"));
+        System.out.println(element.getAttribute("placeholder"));
+        Assertions.assertEquals("E-mail для отправки чека", element.getAttribute("placeholder"));
         return this;
     }
 

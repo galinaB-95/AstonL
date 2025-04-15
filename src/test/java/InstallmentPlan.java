@@ -1,35 +1,37 @@
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 import static javax.swing.text.html.CSS.getAttribute;
 
 public class InstallmentPlan {
-    By accountnumberLocator = By.id("score-instalment");
-    By sumLocator = By.id("instalment-sum");
-    By emailLocator = By.id("instalment-email");
     private final WebDriver driver;
-    public InstallmentPlan(WebDriver driver){
+
+    public InstallmentPlan(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver;
     }
-    public InstallmentPlan checkAccountnumber(String accountnumber) {
-        driver.findElement(accountnumberLocator).getAttribute("placeholder");
-        System.out.println(getAttribute("placeholder"));
-        Assertions.assertEquals("Номер счета на 44", getAttribute("placeholder"));
+
+    public InstallmentPlan checkAccountnumber() {
+        WebElement element = driver.findElement(By.id("score-instalment"));
+        System.out.println(element.getAttribute("placeholder"));
+        Assertions.assertEquals("Номер счета на 44", element.getAttribute("placeholder"));
         return this;
     }
-    public InstallmentPlan checkSumLocator(String sum){
-        driver.findElement(sumLocator).getAttribute("placeholder");
-        System.out.println(getAttribute("placeholder"));
-        Assertions.assertEquals("Сумма", getAttribute("placeholder"));
+
+    public InstallmentPlan checkSumLocator() {
+        WebElement element = driver.findElement(By.id("instalment-sum"));
+        System.out.println(element.getAttribute("placeholder"));
+        Assertions.assertEquals("Сумма", element.getAttribute("placeholder"));
         return this;
     }
-    public InstallmentPlan checkEmailLocator(String email){
-        driver.findElement(emailLocator).getAttribute("placeholder");
-        System.out.println(getAttribute("placeholder"));
-        Assertions.assertEquals("E-mail для отправки чека", getAttribute("placeholder"));
+
+    public InstallmentPlan checkEmailLocator() {
+        WebElement element = driver.findElement(By.id("instalment-email"));
+        System.out.println(element.getAttribute("placeholder"));
+        Assertions.assertEquals("E-mail для отправки чека", element.getAttribute("placeholder"));
         return this;
     }
 
