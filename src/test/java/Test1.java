@@ -68,7 +68,7 @@ public class Test1 {
         driver.findElement(By.id("connection-sum")).sendKeys("200");
         driver.findElement(By.id("connection-email")).sendKeys("2334@fc.com");
         driver.findElement(By.xpath("//button[text()='Продолжить']")).click();
-        WebElement pay = driver.findElement(By.cssSelector("input[formcontrolname=creditCard]"));
+        WebElement pay = driver.findElement(By.cssSelector("div.input[formcontrolname=creditCard]"));
         System.out.println(pay.isDisplayed());
     }
 }
