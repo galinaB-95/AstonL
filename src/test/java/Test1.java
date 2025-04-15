@@ -21,8 +21,8 @@ public class Test1 {
     public void start() {
         driver = new ChromeDriver();
         driver.get("https://www.mts.by/");
-//new WebDriverWait(driver, Duration.ofSeconds(20)).
-//                until(ExpectedConditions.elementToBeClickable(By.id("cookie-agree"))).click();
+        new WebDriverWait(driver, Duration.ofSeconds(20)).
+                until(ExpectedConditions.elementToBeClickable(By.id("cookie-agree"))).click();
         driver.manage().window().maximize();
     }
 
@@ -58,7 +58,7 @@ public class Test1 {
         String actualUrl = driver.getCurrentUrl();
         assertEquals(expectUrl, actualUrl);
         WebElement content = driver.findElement(By.xpath("//*[contains(text(), 'Оплата банковской картой')]"));
-        System.out.println (content.isDisplayed());
+        System.out.println(content.isDisplayed());
 
     }
 
@@ -69,8 +69,9 @@ public class Test1 {
         driver.findElement(By.id("connection-email")).sendKeys("2334@fc.com");
         driver.findElement(By.xpath("//button[text()='Продолжить']")).click();
         WebElement pay = driver.findElement(By.cssSelector("input[formcontrolname=creditCard]"));
-        System.out.println (pay.isDisplayed());
-}}//html/body/app-root/div/div
+        System.out.println(pay.isDisplayed());
+    }
+}
 
 
 
