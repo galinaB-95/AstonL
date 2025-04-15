@@ -7,7 +7,6 @@ import org.openqa.selenium.support.PageFactory;
 import static javax.swing.text.html.CSS.getAttribute;
 
 public class CommunicationSerivices {
-    By emailLocator = By.id("connection-email");
     private final WebDriver driver;
 
     public CommunicationSerivices(WebDriver driver) {
