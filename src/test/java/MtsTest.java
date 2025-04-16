@@ -1,8 +1,8 @@
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -22,8 +22,8 @@ public class MtsTest {
     public void start() {
         driver = new ChromeDriver();
         driver.get("https://www.mts.by/");
-        new WebDriverWait(driver, Duration.ofSeconds(20)).
-                until(ExpectedConditions.elementToBeClickable(By.id("cookie-agree"))).click();
+        //new WebDriverWait(driver, Duration.ofSeconds(20)).
+               // until(ExpectedConditions.elementToBeClickable(By.id("cookie-agree"))).click();
         driver.manage().window().maximize();
         arrears = new Arrears(driver);
         communicationSerivices = new CommunicationSerivices(driver);
@@ -37,7 +37,7 @@ public class MtsTest {
     }
 
     @Test
-    public void testCommunicationSerivices() {
+    public void testCommunicationSerivices() throws InterruptedException {
         communicationSerivices.checkPhonenumber();
         communicationSerivices.checkSumLocator();
         communicationSerivices.checkEmailLocator();
@@ -45,9 +45,18 @@ public class MtsTest {
         driver.findElement(By.id("connection-sum")).sendKeys("200");
         driver.findElement(By.id("connection-email")).sendKeys("2334@fc.com");
         driver.findElement(By.xpath("//button[text()='Продолжить']")).click();
-        WebElement headSum = driver.findElement(By.xpath("//button[text()=' Оплатить 200.00 BYN']")); //html/body/app-root/div/div/div/app-payment-container/section/div/app-card-page/div/div[1]/button"));
-        //WebElement headSum = driver.findElement(By.cssSelector( "div.pay-description__cost"));
+        WebElement iframe = new WebDriverWait(driver, Duration.ofSeconds(20) )
+                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[8]/div/iframe")));
+        driver.switchTo().frame(iframe);
+        WebElement headSum = driver.findElement(By.xpath("/html/body/app-root/div/div/div/app-payment-container/section/div/div/div[1]/div[1]/span"));
         System.out.println(headSum.getText());
+        WebElement buttonSum = driver.findElement(By.xpath("/html/body/app-root/div/div/div/app-payment-container/section/div/div/div[1]/div[1]/span"));
+        System.out.println(buttonSum.getText());
+        WebElement numCard = driver.findElement(By.xpath("/html/body/app-root/div/div/div/app-payment-container/section/div/app-card-page/div/div[1]/app-card-input/form/div[1]/div[1]/app-input/div/div/div[1]/label"));
+        System.out.println(numCard.getText());
+        //WebElement numCard = driver.findElement(By.xpath("/html/body/app-root/div/div/div/app-payment-container/section/div/app-card-page/div/div[1]/app-card-input/form/div[1]/div[2]/div[1]/app-input/div/div/div[1]/label"));
+       // System.out.println();
+
     }
 
     @Test
