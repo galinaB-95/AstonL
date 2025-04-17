@@ -23,7 +23,7 @@ public class MtsTest {
         driver = new ChromeDriver();
         driver.get("https://www.mts.by/");
         //new WebDriverWait(driver, Duration.ofSeconds(20)).
-               // until(ExpectedConditions.elementToBeClickable(By.id("cookie-agree"))).click();
+        // until(ExpectedConditions.elementToBeClickable(By.id("cookie-agree"))).click();
         driver.manage().window().maximize();
         arrears = new Arrears(driver);
         communicationSerivices = new CommunicationSerivices(driver);
@@ -36,7 +36,7 @@ public class MtsTest {
         driver.quit();
     }
 
-   @org.testng.annotations.Test
+    @org.testng.annotations.Test
     public void testCommunicationSerivices() throws InterruptedException {
         communicationSerivices.checkPhonenumber();
         communicationSerivices.checkSumLocator();
@@ -45,17 +45,32 @@ public class MtsTest {
         driver.findElement(By.id("connection-sum")).sendKeys("200");
         driver.findElement(By.id("connection-email")).sendKeys("2334@fc.com");
         driver.findElement(By.xpath("//button[text()='Продолжить']")).click();
-        WebElement iframe = new WebDriverWait(driver, Duration.ofSeconds(40) )
-                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[8]/div/iframe")));
+        WebElement iframe = new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//iframe[@class='bepaid-iframe']")));
         driver.switchTo().frame(iframe);
         WebElement headSum = driver.findElement(By.xpath("/html/body/app-root/div/div/div/app-payment-container/section/div/div/div[1]/div[1]/span"));
         System.out.println(headSum.getText());
-        WebElement buttonSum = driver.findElement(By.xpath("/html/body/app-root/div/div/div/app-payment-container/section/div/div/div[1]/div[1]/span"));
+        WebElement buttonSum = driver.findElement(By.xpath("//html/body/app-root/div/div/div/app-payment-container/section/div/div/div[1]/div[1]/span"));
         System.out.println(buttonSum.getText());
-        WebElement numCard = driver.findElement(By.xpath("/html/body/app-root/div/div/div/app-payment-container/section/div/app-card-page/div/div[1]/app-card-input/form/div[1]/div[1]/app-input/div/div/div[1]/label"));
+        WebElement numPhone = driver.findElement(By.xpath("/html/body/app-root/div/div/div/app-payment-container/section/div/div/div[2]/span"));
+        System.out.println(numPhone.getText());
+        WebElement numCard = driver.findElement(By.xpath("//*[@class='ng-tns-c2312288139-1 ng-star-inserted']"));
         System.out.println(numCard.getText());
-        //WebElement numCard = driver.findElement(By.xpath("/html/body/app-root/div/div/div/app-payment-container/section/div/app-card-page/div/div[1]/app-card-input/form/div[1]/div[2]/div[1]/app-input/div/div/div[1]/label"));
-       // System.out.println();
+        WebElement data = driver.findElement(By.xpath("//*[@class='ng-tns-c2312288139-4 ng-star-inserted']"));
+        System.out.println(data.getText());
+        WebElement cvc = driver.findElement(By.xpath("//*[@class='ng-tns-c2312288139-5 ng-star-inserted']"));
+        System.out.println(cvc.getText());
+        WebElement name = driver.findElement(By.xpath("//*[@class='icons-container ng-tns-c2312288139-3']"));
+        System.out.println(name.getText());
+        WebElement visa = driver.findElement(By.cssSelector("img[src*=visa]"));
+        WebElement mastercard = driver.findElement(By.cssSelector("img[src*=mastercard]"));
+        WebElement belkart = driver.findElement(By.cssSelector("img[src*=belkart]"));
+        WebElement maestro = driver.findElement(By.cssSelector("img[src*=maestro]"));
+        WebElement mir = driver.findElement(By.cssSelector("img[src*=mir]"));
+        System.out.println(" Логотип visa найден " + visa.isDisplayed() + "\n Логотип belkart найден " + belkart.isDisplayed()
+                + " \n Логотип mastercard найден " + mastercard.isDisplayed() + " \n Логотип maestro найден " + maestro.isDisplayed() +
+                " \n Логотип mir найден " + mir.isDisplayed());
+
 
     }
 
